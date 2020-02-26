@@ -8,9 +8,10 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { FlashPageComponent } from './flash-page/flash-page.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,11 @@ import { FlashPageComponent } from './flash-page/flash-page.component'
     AngularFireModule.initializeApp(environment.firebase, 'NewVizMotors'),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flash-page',
@@ -9,7 +10,8 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 export class FlashPageComponent implements OnInit {
   private img1: SafeStyle;
   constructor(
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -21,6 +23,10 @@ export class FlashPageComponent implements OnInit {
 
   getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
+  }
+
+  home(){
+    this.router.navigate(['/home']);
   }
   
 
